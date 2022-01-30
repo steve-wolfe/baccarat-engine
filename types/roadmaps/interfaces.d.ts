@@ -77,9 +77,7 @@ export enum DerivedRoadItem {
   Red = "red",
   Blue = "blue",
 }
-export interface DerivedRoad {
-  items: DerivedRoadItem[];
-}
+export interface DerivedRoad extends Array<DerivedRoadItem> {}
 export type BigEyeRoad = DerivedRoad;
 export type SmallRoad = DerivedRoad;
 export type CockroachPigRoad = DerivedRoad;
