@@ -14,9 +14,7 @@ export interface Bead {
   column: number;
   row: number;
 }
-export interface BeadPlate {
-  beads: Bead[];
-}
+export interface BeadPlate extends Array<Bead> {}
 export interface BeadPlateConfig {
   columns: number;
   rows: number;
@@ -40,9 +38,8 @@ export interface BigRoadItem {
   ties: GameResult[];
   result: GameResult;
 }
-export interface BigRoad {
-  items: BigRoadItem[];
-}
+export interface BigRoad extends Array<BigRoadItem> {}
+
 export interface BigRoadConfig {
   columns: number;
   rows: number;
