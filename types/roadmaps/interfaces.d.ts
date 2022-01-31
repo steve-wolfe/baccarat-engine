@@ -10,7 +10,7 @@ import { GameResult } from "..";
               ]
 */
 export interface Bead {
-  gameResult: GameResult;
+  result: GameResult;
   column: number;
   row: number;
 }
