@@ -88,7 +88,8 @@ class RoadmapGenerator {
               });
             }
             tieStack = [];
-          } else if (lastItem.outcome !== gameResult.outcome) {
+          }
+          if (lastItemInResults && lastItemInResults.result.outcome !== gameResult.outcome) {
             // If this item is different from the outcome of
             // the last game then we must place it in another
             // column
