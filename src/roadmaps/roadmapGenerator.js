@@ -101,6 +101,11 @@ class RoadmapGenerator {
           let keySearch = `${probeColumn}.${probeRow}`;
           let keySearchBelow = `${probeColumn}.${probeRow + 1}`;
 
+          console.log("gameResult =", JSON.stringify(gameResult))
+          console.log("logicalColumnNumber =", logicalColumnNumber)
+          console.log("probeColumn =", probeColumn)
+          console.log("probeRow =", probeRow)
+
           // Position available at current probe location
           if (!_.get(placementMap, keySearch)) {
             let newEntry = _.merge(
