@@ -86,7 +86,7 @@ class RoadmapGenerator {
             }
             tieStack = [];
           }
-          if (lastItemInResults && lastItemInResults.outcome !== gameResult.outcome) {
+          if (lastItem.outcome !== gameResult.outcome) {
             // If this item is different from the outcome of
             // the last game then we must place it in another
             // column
