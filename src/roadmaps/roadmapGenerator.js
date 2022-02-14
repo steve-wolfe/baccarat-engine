@@ -64,11 +64,14 @@ class RoadmapGenerator {
       if (gameResult.outcome === GameResult.Tie) {
         tieStack.push(gameResult);
       } else {
+          console.log("lastItem =", JSON.stringify(lastItem))
+          console.log("gameResult =", JSON.stringify(gameResult))
         if (lastItem) {
           // Add the ties that happened in between the last placed
           // big road item  and this new big road item to the
           // last entered big road item.
           let lastItemInResults = _.last(returnList);
+          console.log("lastItemInResults =", JSON.stringify(lastItemInResults))
           if (lastItem.outcome === GameResult.Tie) {
             if (lastItemInResults) {
               lastItemInResults.ties = _.cloneDeep(tieStack);
@@ -101,7 +104,6 @@ class RoadmapGenerator {
           let keySearch = `${probeColumn}.${probeRow}`;
           let keySearchBelow = `${probeColumn}.${probeRow + 1}`;
 
-          console.log("gameResult =", JSON.stringify(gameResult))
           console.log("logicalColumnNumber =", logicalColumnNumber)
           console.log("probeColumn =", probeColumn)
           console.log("probeRow =", probeRow)
