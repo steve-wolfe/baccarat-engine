@@ -81,16 +81,21 @@ describe('RoadmapGenerator', function() {
         });
 
         describe('When called with game results of all ties', function() {
-            it('Should return a big road with a single tie entry', function() {
-                let games = _.fill(Array(2), {outcome: 'tie'});
+          it('Should return a big road with a single tie entry', function() {
+            let games = _.fill(Array(2), {outcome: 'tie'});
 
-                let result = roadmapGenerator.bigRoad(games);
+            let result = roadmapGenerator.bigRoad(games);
 
-                expect(result).to.eql([
-                    {result: { }, column: 0, row: 0, logicalColumn: 0,
-                     ties: [{outcome: 'tie'}, {outcome: 'tie'}]},
-                ]);
-            });
+            expect(result).to.eql([
+              {
+                result: {},
+                column: 0,
+                row: 0,
+                logicalColumn: 0,
+                ties: [{outcome: 'tie'}, {outcome: 'tie'}],
+              },
+            ]);
+          });
         });
 
         describe('When called with game results starting with ties and ending with a player win', function() {
@@ -99,8 +104,10 @@ describe('RoadmapGenerator', function() {
 
                 let result = roadmapGenerator.bigRoad(games);
 
-                expect(result).to.eql([{result: {outcome: 'banker'}, column: 0, row: 0,
-                 logicalColumn: 0, ties: [{outcome: 'tie'}, {outcome: 'tie'}]}]);
+                expect(result).to.eql([{result: {}, column: 0, row: 0,
+                logicalColumn: 0, ties: [{outcome: 'tie'}, {outcome: 'tie'}],
+                }, {result: {outcome: 'banker'}, column: 1, row: 0,
+                logicalColumn: 1, ties: []}]);
             });
         });
 
