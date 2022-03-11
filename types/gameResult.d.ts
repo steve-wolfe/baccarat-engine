@@ -7,7 +7,7 @@ export = GameResult;
 declare class GameResult {
   outcome: GameResultOutcomes;
   natural: GameResultNatural;
-  pair: GameResultPair;
+  pair?: GameResultPair;
 }
 declare namespace GameResult {
   const Tie: string;
